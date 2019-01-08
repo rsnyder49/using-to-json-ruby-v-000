@@ -13,4 +13,10 @@ class PostSerializer
     # and end with the close brace
     serialized_post += '}'
   end
+  
+  def post_data
+    post = Post.find(params[:id])
+    render json: post.to_json
+  end
+  
 end
