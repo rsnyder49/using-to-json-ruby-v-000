@@ -17,6 +17,7 @@ class PostSerializer
   def post_data
     post = Post.find(params[:id])
     render json: post.to_json
+    post.to_json(include: :author)
   end
   
 end
